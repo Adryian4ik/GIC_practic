@@ -1,0 +1,150 @@
+div {
+    margin: 0;
+}
+
+
+.control {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    width: 25%;
+    padding-left: 10px;
+    height: 100%;
+    justify-content: space-around;
+}
+
+#add-mode {
+    justify-content: flex-start !important;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+#map-frame {
+    height: 100%;
+    width: 100%;
+}
+
+#map {
+    min-width: 1000px;
+    min-height: 500px;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+#header {
+    height: 50px;
+    background-color: #a321de;
+    /* width: 100%; */
+    padding: 5px;
+
+}
+
+
+#title {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    justify-content: start;
+
+}
+
+
+#info-panel{
+    min-width: 150px;
+    width: 15%;
+    display: flex;
+    justify-content: end;
+}
+
+
+
+
+p {
+    vertical-align: middle;
+    margin: 0;
+    line-height: 2em;
+}
+
+.list{
+    margin-top: 5px;
+    width: auto;
+    height: 35vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.description{
+    width: 90%;
+    min-height: 40px;
+    height: auto;
+    background-color: #dea321;
+    margin-top: 2.5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 2.5px;
+}
+
+
+.task{
+    width: 90%;
+    height: 40px;
+    background-color: #21dea3;
+    margin-top: 2.5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 10px;
+    justify-content: start;
+   
+}
+
+.time{
+    font-size: x-small;
+    text-align: end;
+}
+
+#desciption-input{
+    flex: 1;
+    margin-right: 5px;
+}
+
+.selected-description{
+    background-color:#137959;
+}
+
+#input-form{
+    margin-top: 7px;
+    padding-right: 5px;
+    justify-content: center;
+}
+
+.archive-icon{
+    padding: 3px;
+}
+
+.archive-icon:hover {
+    padding: 1px;
+    font-size: 28px;
+}
+
+.description-text{
+    width: 100%;
+}
+
+#point-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

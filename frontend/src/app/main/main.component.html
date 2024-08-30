@@ -1,0 +1,92 @@
+<div id="page">
+    <div id="header" class="horizontal-box">
+        <div id="title">
+        </div>
+
+        <div id="info-panel">
+
+
+            <span class="material-icons icons" (click)="logout()">account_circle</span>
+
+
+            
+        </div>
+
+
+    </div>
+    <div class="horizontal-box" id="map-frame">
+        <div id="map">
+
+        </div>
+        <div id="add-mode" class="control" *ngIf="addMode">
+
+            <div>
+                <p>Название задачи</p>
+                <input type="text" [(ngModel)]="name">
+            </div>
+
+            <div>
+                <p>Указать геолокацию</p>
+                <div class="horizontal-box" id="point-selector">
+                    <button (click)="pointSelect()">Выбрать</button>
+                    <div *ngIf="point!= undefined" >
+                        <p>{{point.lat}} </p>
+                        <p>{{point.lng}}</p>
+                    </div>
+                    <span class="material-icons icons" (click)="deletePoint()" *ngIf="point!= undefined">close</span>
+
+                </div>
+            </div>
+
+            <div style="margin-bottom: 5px;">
+                <p>Введите дату</p>
+                <input type="date" [(ngModel)]="date">
+            </div>
+
+            <button (click)="saveTask()">Сохранить</button>
+            
+        </div>
+        <div class="control" *ngIf="!addMode">
+            <div class="horizontal-box" style="justify-content: space-around;">
+                <button (click)="addTask()">Добавить</button>
+                <div class="horizontal-box">
+                    <input type="checkbox" [(ngModel)]="archiveFlag" (change)="actualChange()">
+                    <p style="line-height: 3em;">Архив</p>
+                </div>
+                
+            </div>
+            <div class="list">
+                <div *ngFor="let task of taskList; let ind = index;" (click)="taskSelect(ind)" class="task" [class.selected-description]='ind == selectedTaskIndex'>
+                    <div class="horizontal-box">
+                        <p>{{task.name}}</p>
+                        <span *ngIf="!archiveFlag" class="material-icons archive-icon" alt="Отметить задачу выполненой" (click)="changeTaskActual(ind)">archive</span>
+                    </div>
+                    <p class="time"> {{dateToString(task.date)}}</p>
+                </div>
+
+                
+
+            </div>
+
+
+            <div>
+                <p>Описание</p>
+
+                <div class="list">
+                    <div *ngFor="let description of descriptionsList; let ind = index;" (click)="taskSelect(ind)" class="description">
+                        <p class="description-text">{{description.text}}</p>
+                        <p class="time"> {{dateToString(description.datetime)}}</p>
+                    </div>
+                </div>
+                <div class="horizontal-box" id="input-form" *ngIf="taskList.length!=0 && !archiveFlag">
+                    <input type="text" id="desciption-input" [(ngModel)]="descriptionText">
+                    <button (click)="addDescription()">Добавить описание</button>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        
+    </div>
+</div>
